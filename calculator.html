@@ -1,0 +1,71 @@
+<html>
+<head>
+
+</head>
+
+<body>
+
+  <input  id= "num1" type='text' placeholder='number'/>
+  <input id= "num2" type='text' placeholder='number'/>
+
+  <button id ="add"> + </button>
+  <button id ="subtract"> - </button>
+  <button id ="divide"> / </button>
+  <button id ="multiply"> * </button>
+
+  <label> Answer </label>
+  <input type="text" id="answer" readonly/>
+
+  <script>
+  var input1 = document.querySelector("#num1");
+  var input2 = document.querySelector("#num2");
+  var add = document.querySelector("#add");
+  var subtract = document.querySelector("#subtract");
+  var divide = document.querySelector("#divide");
+  var multiply = document.querySelector("#multiply");
+  var answer = document.querySelector("#answer");
+
+
+
+var answerAdd = function (){
+
+  var solution = parseInt(input1.value) + parseInt(input2.value);
+  answer.value = solution;
+  console.log(solution);
+
+};
+
+var answerSub = function (){
+
+  var solution = parseInt(input1.value) - parseInt(input2.value);
+  answer.value = solution;
+  console.log(solution);
+};
+
+var answerDivide = function (){
+
+  var solution = parseInt(input1.value) / parseInt(input2.value);
+  answer.value = solution;
+  console.log(solution);
+};
+
+var answerMultiply = function (){
+
+  var solution = parseInt(input1.value) - parseInt(input2.value);
+  answer.value = solution;
+  console.log(solution);
+};
+
+add.addEventListener("click", answerAdd);
+subtract.addEventListener("click",answerSub);
+divide.addEventListener("click",answerDivide);
+multiply.addEventListener("click",answerMultiply);
+
+  </script>
+
+</body>
+</html>
+
+//for one box: store the input into an array. [0 = 1st num, 1=operator, 2 = 2nd num]
+//first input push into empty array, then push in event listener for operator, then clear box, then push in third input
+//then check position 1 of array. depending on what operator it is, call the function.
